@@ -8,7 +8,7 @@
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "'+$vmName+'/'+$extensionName+'",
             "apiVersion": "2016-04-30-preview",
-            "location": "'+$vmLocation+'",
+            "location": "uksouth",
             "properties": {
                 "publisher": "Microsoft.Azure.Diagnostics",
                 "type": "IaaSDiagnostics",
