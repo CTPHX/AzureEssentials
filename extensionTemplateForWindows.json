@@ -6,26 +6,26 @@
     "resources": [
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "rmwvd-b-14/IaaSDiagnostics",
+            "name": "'+$vmName+'/'+$extensionName+'",
             "apiVersion": "2016-04-30-preview",
-            "location": "uksouth",
+            "location": "'+$vmLocation+'",
             "properties": {
                 "publisher": "Microsoft.Azure.Diagnostics",
                 "type": "IaaSDiagnostics",
                 "typeHandlerVersion": "1.5",
                 "autoUpgradeMinorVersion": true,
                 "protectedSettings": {
-                    "storageAccountName": "rmhwvdsrv",
-                    "storageAccountKey": "hDt595TRJYKP79tP9OS/QAT7mWeVyO2k5bX9ZDQo4HG7GnJ10ntFL+k7zr+pu5LYQHiyPuPlNnnR1q4M2b/4kQ==",
+                    "storageAccountName": "'+$storageName+'",
+                    "storageAccountKey": "'+$storageKey+'",
                     "storageAccountEndPoint": "https://core.windows.net"
                 },
                 "settings": {
-                    "StorageAccount": "rmhwvdsrv",
+                    "StorageAccount": "'+$storageName+'",
                     "WadCfg": {
                         "DiagnosticMonitorConfiguration": {
                             "overallQuotaInMB": 5120,
                             "Metrics": {
-                                "resourceId": "/subscriptions/e1e1e36c-1b23-47a5-8bc1-a6eb091a2b18/resourceGroups/RMH-UKS-WVDVMS/providers/Microsoft.Compute/virtualMachines/rmwvd-b-14",
+                                "resourceId": "'+$vmId+'",
                                 "MetricAggregation": [
                                     {
                                         "scheduledTransferPeriod": "PT1H"
